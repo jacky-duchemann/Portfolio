@@ -22,6 +22,18 @@
     <section class="about-me">
         <!-- Texte introductif a propos de moi -->
         <!-- Bouton pour accéder la page CV -->
+        
+            <div class="about-me__text">
+                <h2>À propos de moi</h2>
+                <p>Je m'appelle Jacky Duchemann et je suis développeur web spécialisé dans la création de sites WordPress. Passionné par le code depuis plusieurs années, j'aime transformer des idées en sites fonctionnels et intuitifs.</p>
+                <p>Avec plusieurs projets réalisés en PHP, JavaScript et WordPress, je maîtrise les outils modernes du développement web.</p>
+                <p>Je suis actuellement à la recherche de nouveaux défis en tant que développeur freelance ou au sein d'une équipe dynamique.</p>
+                <p>N'hésitez pas à me contacter pour discuter d'un projet ou d'une opportunité.</p>
+            </div>
+            <div class="about-me__photo">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/images/jacky-photo.jpg' ); ?>" alt="Photo de Jacky Duchemann">
+            </div>
+        
     </section>
 
     </section class="liste-projet">
