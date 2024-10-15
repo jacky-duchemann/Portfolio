@@ -1,0 +1,203 @@
+@charset "UTF-8";
+/**
+Mixins pour le responsive du site 
+*/
+@keyframes fadeInTitle {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Police d'écritures du site */
+@font-face {
+  font-family: "Comication";
+  src: url("../fonts/Comication.woff") format("woff");
+}
+@font-face {
+  font-family: "Dschool";
+  src: url("../fonts/Cafe24Decoschool.woff") format("woff");
+}
+.site-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 80vw;
+  margin: auto;
+  margin-top: 5vh;
+  align-items: center;
+  margin-top: 0%;
+  border-bottom: 5px double #767b91;
+  padding-top: 2vh;
+  padding-bottom: 3vh;
+}
+.site-header__logo {
+  opacity: 0;
+  transform: translateY(20px);
+  width: 80px;
+  height: 50px;
+  animation: fadeInTitle 1s ease-in-out forwards;
+}
+.site-header__logo a img {
+  width: 100%;
+}
+.site-header__menu {
+  font-family: Dschool;
+  font-size: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInTitle 2s ease-in-out forwards;
+}
+.site-header__menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+.site-header__menu li {
+  margin-left: 20px; /* Espacement entre les éléments du menu */
+  border-bottom: 5px solid #f7c59f;
+  border-left: 2px solid #2a324b;
+  border-right: 2px solid #2a324b;
+  padding: 4px;
+}
+.site-header__menu a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+.site-header__menu a:hover {
+  color: #767b91;
+}
+
+.hero-header {
+  max-width: 80vw;
+  height: 70vh;
+  margin: auto;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+  box-shadow: 0px 8px 6px #2a324b;
+  border-top: 3px solid #f7c59f;
+}
+.hero-header__content {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  font-size: 30px;
+  font-weight: 700;
+  color: #f7c59f;
+  font-family: Comication;
+  opacity: 50%;
+  opacity: 0;
+  transform: translateY(200px);
+  animation: fadeInTitle 3s ease forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hero-header__content .cta-button {
+  display: inline-block;
+  padding: 20px 35px;
+  background-color: #f7c59f;
+  color: #2a324b;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 3px 5px 10px #f7c59f;
+  transition: background-color 1.2s ease, transform 0.8s ease-out;
+}
+.hero-header__content .cta-button:hover {
+  background-color: #767b91;
+  color: #f7c59f;
+  transform: scale(1.1);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80vw;
+  margin: auto;
+  padding-top: 2vh;
+  border-top: 5px double #767b91;
+}
+
+/* Single-projet.php*/
+.main-title {
+  max-width: 80vw;
+  margin: auto;
+  font-family: Dschool;
+  font-size: 30px;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  padding-bottom: 3%;
+  padding-top: 3%;
+  display: flex;
+  justify-content: center;
+  border: 2px solid #2a324b;
+  background-color: #f7c59f;
+  box-shadow: 0px 13px 10px #2a324b;
+}
+
+.projet-detail {
+  max-width: 80vw;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  overflow: hidden;
+}
+.projet-detail__thumbnail {
+  width: 50%;
+  height: 100%;
+}
+.projet-detail__thumbnail img {
+  width: 100%;
+  height: 100%;
+}
+.projet-detail__info {
+  width: 50%;
+  margin-bottom: 0;
+  width: 50%;
+  height: 100%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+}
+.projet-detail__info h2 {
+  font-family: Dschool;
+  font-size: 20px;
+}
+.projet-detail__info__context {
+  display: flex;
+  flex-direction: column;
+}
+.projet-detail__info__competences ul {
+  list-style-type: none;
+}
+.projet-detail__info__competences ul li {
+  display: inline-block;
+  background-color: #f7c59f;
+  padding: 5px 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+footer {
+  max-width: 80vw;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+  border-top: 5px double #767b91;
+}/*# sourceMappingURL=style.css.map */
