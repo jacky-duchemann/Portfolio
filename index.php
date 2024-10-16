@@ -19,6 +19,8 @@
         </div>
     </header>
 
+    <hr></hr>
+
     <section class="about-me">
         <!-- Texte introductif a propos de moi -->
         <!-- Bouton pour accéder la page CV -->
@@ -31,7 +33,7 @@
                 <p>N'hésitez pas à me contacter pour discuter d'un projet ou d'une opportunité.</p>
             </div>
             <div class="about-me__photo">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/images/jacky-photo.jpg' ); ?>" alt="Photo de Jacky Duchemann">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/images/jacky.jpg' ); ?>" alt="Photo de Jacky Duchemann">
             </div>
         
     </section>
