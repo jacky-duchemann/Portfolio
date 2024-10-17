@@ -20,6 +20,14 @@ Mixins pour le responsive du site https://openclassrooms.com/fr/
     }
   }
 
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
 /* Police d'écritures du site */
 @font-face {
     font-family: 'Comication';
@@ -41,7 +49,7 @@ $theme-color-2: #2a324b;
 $theme-color-3: #767b91;
 
 hr {
-    max-width: 80vw;
+    max-width: 90vw;
     background-color: $theme-color-2;
     color: $theme-color-3;
     height: 10px;
@@ -58,12 +66,13 @@ hr {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    max-width: 90vw;
     margin: auto;
     margin-top: 5vh;
     align-items: center;
     margin-top: 0%;
-    border-bottom: 5px double $theme-color-3;
+    //border-radius: 5%;
+    //box-shadow: 0px 8px 6px $theme-color-2;
+    border-bottom: 5px solid $theme-color-1;
     padding-top: 2vh;
     padding-bottom: 3vh;
     background-color: white;
@@ -73,6 +82,7 @@ hr {
             width: 100px;
             height: 70px;
             animation: fadeInTitle 1s ease-in-out forwards;
+            margin-left: 5vw;
             a {
                 img {
                     width: 100%;
@@ -90,6 +100,7 @@ hr {
             transform: translateY(30px);
             animation: fadeInTitle 2s ease-in-out forwards;
             //text-transform: uppercase;
+            margin-right: 5vw;
             ul {
                 list-style: none; 
                 padding: 0; 
@@ -98,36 +109,33 @@ hr {
             }
             li {
                 margin-left: 20px; /* Espacement entre les éléments du menu */
-                border-bottom: 5px solid $theme-color-1;
-                border-left: 2px solid $theme-color-2;
-                border-right: 2px solid $theme-color-2;
                 padding: 4px;
             }
         a {
             text-decoration: none; 
             color: $theme-color-2; 
             font-weight: bold; 
-            transition: color 1s ease-in-out;
+            transition: color 0.5s ease-in-out;
             &:hover {
                 color: $theme-color-3;
-                text-shadow: 0px 2px 4px $theme-color-2;
+                text-shadow: 0px 3px 3px $theme-color-1;
+                text-decoration: underline;
             }
         }  
         }
   }
 
 .hero-header {
-    max-width: 80vw;
     height: 70vh;
     margin: auto;
     background-size: cover;
     display: flex;
     align-items: center;
     margin-bottom: 5vh;
-    margin-top: 5vh;
     box-shadow: 0px 8px 6px $theme-color-2;
-    border-top: 3px solid $theme-color-1;
-    //border-bottom: 3px solid $theme-color-1;
+    border-top: 5px solid $theme-color-2;
+    transform: translateY(-50px);
+    animation: fadeInTitle 3s ease forwards;
     &__content {
         justify-content: center;
         align-items: center;
@@ -136,14 +144,30 @@ hr {
         font-weight: 700;
         color: $theme-color-1;
         font-family: Comication;
-        opacity: 50%;
-        opacity: 0;
-        transform: translateY(200px);
-        animation: fadeInTitle 3s ease forwards;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        .typewriter-container {
+            font-family: Paragraphe, monospace;
+            display: flex;
+            justify-content: flex-start;
+            &__title {
+                h1 {
+                    font-size: 75px;
+                    font-weight: lighter;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    position: relative;
+                    animation: typing 2.5s steps(15);
+                }
+            }
+
+        }
+        p {
+            transform: translateY(20px);
+            animation: fadeInTitle 3s ease forwards;
+        }
         .cta-button {
             display: inline-block;
             padding: 20px 35px;
@@ -155,6 +179,8 @@ hr {
             text-decoration: none;
             border-radius: 5px; 
             box-shadow: 3px 5px 10px $theme-color-1;
+            transform: translateY(40px);
+            animation: fadeInTitle 3s ease forwards;
             transition: background-color 1.2s ease, transform 0.8s ease-out;
                 &:hover {
                     background-color: $theme-color-3;
@@ -169,7 +195,7 @@ hr {
     background-color: white;
     display: flex;
     flex-direction: row;
-    max-width: 80vw;
+    max-width: 85vw;
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
@@ -181,6 +207,10 @@ hr {
     padding-right: 1vw;
     border-radius: 15px;
     box-shadow: 0px 8px 6px black;
+    transition: transform 0.3s;
+        &:hover {
+            transform: translateY(-5px);
+        }
         &__text {
             width: 50%;
             height: 100%;
@@ -209,14 +239,54 @@ hr {
             }
         }
 }
-.footer-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 80vw;
-    margin: auto;
-    padding-top: 2vh;
-    border-top: 5px double $theme-color-3;
+
+.liste-projet {
+    padding: 50px 0;
+        &__h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-family: Comication;
+            //margin-bottom: 20px;
+        }
+        &__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 90vw;
+            margin: 0 auto;
+                &__project {
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 8px 6px black;
+                    text-align: center;
+                    transition: transform 0.3s;
+                    &:hover {
+                        transform: translateY(-10px);
+                    }
+                    img {
+                        max-width: 100%;
+                        border-radius: 50%;
+                        margin-bottom: 20px;
+                    }
+                    h3 {
+                        font-size: 1.5rem;
+                        font-family: Comication;
+                    }
+                    p {
+                        font-size: 1rem;
+                        color: $theme-color-3;
+                        font-family: Paragraphe;
+                    }
+                    .project-link {
+                        display: inline-block;
+                        text-decoration: none;
+                    }
+                    .langage {
+                        border: 2px solid $theme-color-2;
+                        box-shadow: 0px -5px -6px $theme-color-2;
+                    }
+                }
+        }
 }
 
 /* Single-projet.php*/
@@ -291,11 +361,10 @@ hr {
 }
 
 footer {
-    max-width: 80vw;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 5%;
-    border-top: 5px double $theme-color-3;
+    border-top: 5px solid $theme-color-1;
 }

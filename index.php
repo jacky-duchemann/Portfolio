@@ -10,9 +10,13 @@
         get_header(); // Inclut l'en-tête du site
     ?>
 
-    <header class="hero-header fade-in" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . "/images/hero-header2.jpg" ); ?>');">
+    <header class="hero-header fade-in" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . "/images/hero-header3.jpg" ); ?>');">
         <div class="hero-header__content">
-            <h1><i>JACKY DUCHEMANN</i></h1>
+            <div class="typewriter-container">
+                <div class="typewriter-container__title">
+                    <h1><i>JACKY DUCHEMANN</i></h1>
+                </div>
+            </div>
             <P>Developpeur Wordpress</p>
             <!-- Bouton CTA -->
             <a href="#contact" class="cta-button">| Contactez-moi |</a>
@@ -42,6 +46,46 @@
         <!-- Titre = Mes projets -->
         <!-- Loop des projets -> 2 colonnes -->
         <!-- Envie de réaliser un projet ? -> CTA comme sur le hero-header -->
+        <hr></hr>
+        <h2 class="liste-projet__h2"> Mes projets </h2>
+        
+        <div class="liste-projet__grid">
+            <?php
+            $args = array (
+                'post_type' => 'projet',
+                'posts_per_page' => -1,
+            );
+            $projets = new WP_Query($args);
+            
+            if ($projets->have_posts()) :
+                while ($projets->have_posts()) : $projets->the_post();
+                    $image = get_the_post_thumbnail_url();
+                    $titre = get_the_title();
+                    $contexte = get_field('contexte_projet');
+            ?>
+                <div class="liste-projet__grid__project">
+                    <img src="<?php echo esc_url($image);?>" alt="<?php echo esc_attr($titre);?>">
+                    <h3><?php echo esc_html($titre);?></h3>
+                    <p><?php echo esc_html($contexte) ; ?></p>
+                    <h4> Langage(s) utilisé(es) </h4>
+                    <div class="langage">
+                    <?php 
+                    $langages = get_field('langage'); // Récupère les compétences sélectionnées
+                    if ( $langages ) :
+                        foreach ( $langages as $langage) :
+                            echo '<p>' . esc_html( $langage ) . '</p>'; // Affiche chaque compétence
+                        endforeach;
+                    endif;
+                    ?> 
+                    </div>
+                </div>
+                <?php
+            endwhile;
+        endif;
+        wp_reset_postdata();
+        ?>
+        </div>
+
     </section>
 
     <?php 
