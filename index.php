@@ -10,7 +10,7 @@
         get_header(); // Inclut l'en-tête du site
     ?>
 
-    <header class="hero-header fade-in" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . "/images/hero-header3.jpg" ); ?>');">
+    <section class="hero-header fade-in" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . "/images/hero-header3.jpg" ); ?>');">
         <div class="hero-header__content">
             <div class="typewriter-container">
                 <div class="typewriter-container__title">
@@ -21,7 +21,7 @@
             <!-- Bouton CTA -->
             <a href="#contact" class="cta-button">| Contactez-moi |</a>
         </div>
-    </header>
+    </section>
 
     <hr></hr>
 

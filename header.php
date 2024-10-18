@@ -8,7 +8,7 @@
 <header class="site-header">
 	<div class="site-header__logo">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"> <!-- Lien vers l'acceuil avec le logo -->
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" alt="Logo Jacky Duchemann" />
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-portfolio.png" alt="Logo Jacky Duchemann" />
 				</a>
             </div>
     <nav class="site-header__menu">
