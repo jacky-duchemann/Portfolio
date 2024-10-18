@@ -10,11 +10,11 @@
         get_header(); // Inclut l'en-tête du site
     ?>
 
-    <section class="hero-header fade-in" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . "/images/hero-header3.jpg" ); ?>');">
+    <section class="hero-header fade-in" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . "/images/hero-header2.jpg" ); ?>');">
         <div class="hero-header__content">
             <div class="typewriter-container">
                 <div class="typewriter-container__title">
-                    <h1><i>JACKY DUCHEMANN</i></h1>
+                    <h1><i>DUCHEMANN Jacky</i></h1>
                 </div>
             </div>
             <P>Developpeur Wordpress</p>
@@ -42,7 +42,7 @@
         
     </section>
 
-    </section class="liste-projet">
+    <section class="liste-projet" id="projets">
         <!-- Titre = Mes projets -->
         <!-- Loop des projets -> 2 colonnes -->
         <!-- Envie de réaliser un projet ? -> CTA comme sur le hero-header -->
@@ -67,17 +67,17 @@
                     <img src="<?php echo esc_url($image);?>" alt="<?php echo esc_attr($titre);?>">
                     <h3><?php echo esc_html($titre);?></h3>
                     <p><?php echo esc_html($contexte) ; ?></p>
-                    <h4> Langage(s) utilisé(es) </h4>
-                    <div class="langage">
+                    <!-- <h4> Langage(s) utilisé(es) </h4> -->
+                    <!--<div class="langage">
                     <?php 
-                    $langages = get_field('langage'); // Récupère les compétences sélectionnées
+                    /*$langages = get_field('langage'); // Récupère les compétences sélectionnées
                     if ( $langages ) :
                         foreach ( $langages as $langage) :
                             echo '<p>' . esc_html( $langage ) . '</p>'; // Affiche chaque compétence
                         endforeach;
-                    endif;
+                    endif;*/
                     ?> 
-                    </div>
+                    </div> -->
                 </div>
                 <?php
             endwhile;
