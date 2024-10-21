@@ -23,9 +23,38 @@
 
                 <div>
                 <h2>Description</h2>
-                <div><?php the_field('description_projet'); ?></div>
+                <p><?php the_field('description_projet'); ?></p>
                 </div>
+                <?php
+                // Récupérer les images ACF
+                $image_1 = get_field('image-illustration-1');
+                $image_2 = get_field('image-illustration-2');
+                $image_3 = get_field('image-illustration-3');
 
+                if ($image_1 || $image_2 || $image_3) : ?>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                    <?php if ($image_1) : ?>
+                        <div class="swiper-slide">
+                            <img src="<?php echo esc_url($image_1['url']); ?>" alt="<?php echo esc_attr($image_1['alt']); ?>" />
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ($image_2) : ?>
+                        <div class="swiper-slide">
+                            <img src="<?php echo esc_url($image_2['url']); ?>" alt="<?php echo esc_attr($image_2['alt']); ?>" />
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ($image_3) : ?>
+                        <div class="swiper-slide">
+                            <img src="<?php echo esc_url($image_3['url']); ?>" alt="<?php echo esc_attr($image_3['alt']); ?>" />
+                        </div>
+                    <?php endif; ?>
+                    </div>
+            </div>
+                <?php endif; ?>
+                    <!-- -->
                 <div class="projet-detail__info__competences">
                 <h2>Compétences acquises</h2>
                 <ul>
@@ -39,10 +68,9 @@
                     ?>
                 </ul>
                 </div>
-
-                <div class="projet-detail__link">
-                <h2>Voir le code sur GitHub</h2>
-                <p><a href="<?php the_field('lien_github'); ?>" target="_blank">Accéder au projet sur GitHub</a></p>
+                
+                <div class="projet-detail__info__link">
+                <p><a class="cta-link" href="<?php the_field('lien_github'); ?>" target="_blank">Accéder au projet sur GitHub</a></p>
                 </div>
             </div>
         </article>

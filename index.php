@@ -19,7 +19,7 @@
             </div>
             <P>Developpeur Wordpress</p>
             <!-- Bouton CTA -->
-            <a href="#contact" class="cta-button">| Contactez-moi |</a>
+            <a href="#contact" class="cta-button fade__in__section">| Contactez-moi |</a>
         </div>
     </section>
 
@@ -63,7 +63,7 @@
                     $titre = get_the_title();
                     $contexte = get_field('contexte_projet');
             ?>
-                <div class="liste-projet__grid__project">
+                <a href="<?php the_permalink(); ?>" class="liste-projet__grid__project">
                     <img src="<?php echo esc_url($image);?>" alt="<?php echo esc_attr($titre);?>">
                     <h3><?php echo esc_html($titre);?></h3>
                     <p><?php echo esc_html($contexte) ; ?></p>
@@ -78,7 +78,7 @@
                     endif;*/
                     ?> 
                     </div> -->
-                </div>
+                </a>
                 <?php
             endwhile;
         endif;
