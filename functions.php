@@ -5,7 +5,7 @@ function mon_theme_enfant_enqueue_styles() {
         'mon-theme-enfant-style', 
         get_stylesheet_directory_uri() . '/css/style.css', 
         array(), 
-        filemtime( get_stylesheet_directory() . '/css/style.css' ) // Version basée sur la date de modification du fichier pour éviter la mise en cache
+        filemtime( get_stylesheet_directory() . '/css/style.css' ) 
     );
 }
 add_action( 'wp_enqueue_scripts', 'mon_theme_enfant_enqueue_styles' );
