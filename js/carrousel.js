@@ -22,3 +22,18 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('La classe .swiper-container n\'a pas été trouvée.');
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var swipeContainer = document.querySelector('.swipe-container');
+    var swipe = new Swipe(swipeContainer, {
+        startSlide: 0,
+        speed: 400,
+        auto: 3000,
+        continuous: true,
+        disableScroll: false,
+        stopPropagation: false,
+        mousewheel: true, // Activer le contrôle par molette
+        // Options supplémentaires ici
+    });
+});

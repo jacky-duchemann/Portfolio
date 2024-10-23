@@ -18,7 +18,7 @@ Mixins pour le responsive du site https://openclassrooms.com/fr/
 @mixin cta-button {
     display: inline-block;
     padding: 20px 35px;
-    background-color: $theme-color-1; 
+    background-color: $theme-color-4; 
     color: $theme-color-2;
     font-size: 1.8rem;
     font-weight: bold;
@@ -29,8 +29,8 @@ Mixins pour le responsive du site https://openclassrooms.com/fr/
     animation: fadeInTitle 3s ease forwards;
     transition: background-color 1.2s ease, transform 0.8s ease-out;
         &:hover {
-            background-color: $theme-color-3;
-            color: $theme-color-1;
+            background-color: $theme-color-1;
+            color: $theme-color-3;
             transform: scale(1.50);
             box-shadow: 3px 5px 10px $theme-color-1;
         }
@@ -76,17 +76,21 @@ Mixins pour le responsive du site https://openclassrooms.com/fr/
     src: url('../fonts/CaviarDreams.woff') format('woff'),
 }
 
-/* Variables du site */
-$theme-color-1: #f7c59f;
-$theme-color-2: #2a324b;
-$theme-color-3: #767b91;
+/* Variables couleurs du site */
+$theme-color-1: #D2B48C;
+$theme-color-2: #333333;
+$theme-color-3: #E0E0E0;
+$theme-color-4: #F5F5F5; 
 
 html {
     scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
 }
 
 body {
-    background: $theme-color-2;
+    //background: $theme-color-2;
+    background: black;
 }
 hr {
     display: none;
@@ -110,13 +114,94 @@ hr {
     margin: auto;
     margin-top: 5vh;
     align-items: center;
-    margin-top: 0%;
-    border-radius: 15%;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-    border-top: 10px solid $theme-color-1;
-    border-bottom: 5px solid $theme-color-1;
+    border-radius: 25% 25% 0% 0%;
+    //box-shadow: 65px 65px 65px 65px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 -4px 6px -2px $theme-color-1;
+    border-top: 10px solid black;
+    //border-bottom: 5px solid $theme-color-1;
     padding-top: 2vh;
     padding-bottom: 3vh;
+    background-color: $theme-color-1;
+    @include respond_to_mobile {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+    }
+        &__logo {
+            opacity: 0;
+            transform: translateY(20px);
+            width: 100px;
+            height: 70px;
+            align-items: center;
+            animation: fadeInTitle 1s ease-in-out forwards;
+            margin-left: 5vw;
+            padding: 1%;
+            border-radius: 50%;
+            @include respond_to_mobile {
+                margin-left: 0;
+                padding: none;
+            }
+            a {
+                img {
+                    width: 100%;
+                    border-radius: 50%;
+                    &:hover {
+                        transform: scale(1.10);
+                    }
+                }
+            }
+            
+        }
+        &__menu {
+            font-family: Paragraphe;
+            font-size: 30px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInTitle 2s ease-in-out forwards;
+            margin-right: 5vw;
+            @include respond_to_mobile {
+                margin-right: 0;
+                font-size: 20px;
+            }
+            ul {
+                list-style: none; 
+                padding: 0; 
+                margin: 0; 
+                display: flex; 
+            }
+            li {
+                margin-left: 20px;
+                padding: 4px;
+            }
+        a {
+            text-decoration: none; 
+            color: $theme-color-2; 
+            font-weight: bold; 
+            transition: color 0.8s ease-in-out;
+            &:hover {
+                color: $theme-color-3;
+                text-shadow: 0px 3px 3px $theme-color-2;
+                //text-decoration: underline;
+            }
+        }  
+        }
+  }
+
+/*.site-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    //margin-top: 5vh;
+    align-items: center;
+    //margin-top: 5vh;
+    //border-radius: 15%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    //border-top: 10px solid $theme-color-1;
+    border-bottom: 5px double $theme-color-1;
+    padding-top: 2vh;
+    //padding-bottom: 3vh;
     background-color: $theme-color-3;
     @include respond_to_mobile {
         flex-direction: column;
@@ -180,22 +265,26 @@ hr {
             }
         }  
         }
-  }
-
+  }*/
 .hero-header {
     height: 70vh;
     margin: auto;
     background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     margin-bottom: 5vh;
-    margin-top: 5vh;
+    margin-top: -3vh;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-    //box-shadow: 0px 8px 6px white;
-    border-top: 5px solid $theme-color-1;
-    border-radius: 15%;
+    border-bottom: 5px solid $theme-color-1;
+    border-top: 2px solid $theme-color-1;
+    border-radius: 0% 0% 15% 15%;
     transform: translateY(-50px);
     animation: fadeInTitle 3s ease forwards;
+    z-index: 0;
+    @include respond_to_mobile {
+        margin-top: 0;
+    }
     &__content {
         justify-content: center;
         align-items: center;
@@ -215,6 +304,8 @@ hr {
             font-family: Paragraphe;
             display: flex;
             justify-content: flex-start;
+            color: $theme-color-1;
+            //text-shadow: 2px 2px 15px $theme-color-1;
             @include respond_to_mobile {
                 width: 50%;
                 align-items: center;
@@ -228,8 +319,10 @@ hr {
                     white-space: nowrap;
                     position: relative;
                     animation: typing 2.5s steps(15);
+                    margin-bottom: 25vh;
                     @include respond_to_mobile {
-                        font-size: 40px;
+                        font-size: 30px;
+                        margin-bottom: 15vh;
                     }
                 }
             }
@@ -274,13 +367,16 @@ hr {
             }
             h2 {
                 font-family: Paragraphe;
-                font-size: 30px;
+                font-size: 2.5rem;
                 color: $theme-color-1;
             }
             p {
                 font-family: Paragraphe;
                 font-size: 15px;
                 color: grey;
+            }
+            .cta-button2 {
+                @include cta-button;
             }
         }
         &__photo {
@@ -308,6 +404,44 @@ hr {
         }
 }
 
+.title-tech {
+    margin-top: 12vh;
+    max-width: 80vw;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-family: Paragraphe;
+    font-size: 2.5rem;
+    color: $theme-color-1;
+}
+.technologies-carousel {
+    padding: 40px 20px;
+    background-color: white;
+    margin-top: 5vh;
+    .swipe-container {
+        position: relative;
+        overflow: hidden; /* Cache les éléments hors de la zone visible */
+        .swipe {
+            .swipe-wrapper {
+                display: flex; /* Aligne les éléments horizontalement */
+                flex-direction: row;
+                gap: 15vw;
+                .swipe-item {
+                    flex: 0 0 auto; /* Empêche les éléments de se réduire */
+                    margin-right: 10px; /* Espace entre les éléments */
+                    text-align: center; /* Centrer le contenu */
+                    img {
+                        width: 80px; /* Largeur de l'icône */
+                        height: auto; /* Hauteur automatique pour garder les proportions */
+                        margin: 0 auto; /* Centrer l'image */
+                    }
+                }
+            }
+        }
+    }
+}
 .liste-projet {
     padding: 50px 0;
         &__h2 {
@@ -326,14 +460,14 @@ hr {
                 &__project {
                     padding: 20px;
                     border-radius: 10px;
-                    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-                    background-color: $theme-color-3;
+                    box-shadow: 5px 5px 15px rgba(90, 86, 86, 0.3);
+                    background-color: $theme-color-1;
                     text-align: center;
                     transition: transform 0.3s ease-in-out, box-shadow 0.4s ease-in;
                     text-decoration: none;
                     &:hover {
                         transform: translateY(-10px);
-                        box-shadow: 5px 5px 15px $theme-color-1;
+                        box-shadow: 5px 5px 5px $theme-color-3;
                         transform: scale(1.05);
                     }
                     img {
@@ -344,7 +478,7 @@ hr {
                     h3 {
                         font-size: 1.5rem;
                         font-family: Paragraphe; 
-                        color: $theme-color-1; 
+                        color: $theme-color-3; 
                     }
                     p {
                         font-size: 1rem;
@@ -367,19 +501,20 @@ hr {
 /* Single-projet.php*/
 
 .main-title {
-    //max-width: 80vw;
     margin: auto;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+    //margin-top: 5vh;
+    margin-bottom: 15vh;
     padding-bottom: 3%;
     padding-top: 3%;
     display: flex;
     justify-content: center;
-    box-shadow: 0px 13px 10px $theme-color-2;
+    //box-shadow: 0px 5px 8px $theme-color-1;
     text-align: center;
-    font-family: Comication;
+    font-family: Paragraphe;
     font-size: 40px;
     color: $theme-color-1;
+    border-bottom: 2px solid $theme-color-1;
+    //background-color: $theme-color-3;
     @include respond_to_mobile {
         font-size: 25px;
         align-content: center;
@@ -410,8 +545,9 @@ hr {
         }
         img {
             width: 100%;
-            height: 50%;
+            height: 100%;
             border-radius: 50%;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
             @include respond_to_mobile {
                 width: 80%;
                 height: 100%;
@@ -423,8 +559,6 @@ hr {
         margin-bottom: 0;
         width: 50%;
         height: 100%;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        font-size: 15px;
         display: flex;
         flex-direction: column;
         gap: 5vh;
@@ -432,17 +566,16 @@ hr {
             width: 100%;
         }
         h2 {
-            font-family: Dschool;
             font-size: 50px;
             color: $theme-color-1;
-            font-family: Paragraphe;
+            font-family: Teacher;
             @include respond_to_mobile {
                 font-size: 35px;
             }
         } 
         p {
             font-family: Paragraphe;
-            font-size: 25px;
+            font-size: 15px;
             color: grey;
             @include respond_to_mobile {
                 font-size: 20px;
@@ -487,6 +620,7 @@ hr {
             flex-direction: row;
             justify-content: center;
             align-items: center;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
             img {
                 width: 100%;
                 height: auto;
@@ -495,7 +629,7 @@ hr {
                 border-radius: 15%;
                 border-left: 2px solid $theme-color-1;
                 border-right: 2px solid $theme-color-3;
-                box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+                box-shadow: 5px 5px 15px $theme-color-1;
             }
         }
     }

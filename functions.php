@@ -27,3 +27,16 @@ function enqueue_swiper_assets() {
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_swiper_assets');?>
+
+<?php 
+function enqueue_custom_script() {
+    // Chemin vers le fichier script.js
+    wp_enqueue_script(
+        'custom-script', // Identifiant unique pour le script
+        get_template_directory_uri() . '/js/script.js', // URL du script
+        array(), // Dépendances (si besoin de jQuery, etc.)
+        null, // Version (null pour désactiver la gestion des versions)
+        true // Charger dans le footer (true) ou dans le header (false)
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_script');?>
