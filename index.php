@@ -68,7 +68,7 @@
                     <div class="swipe-item">
                         <img src="<?php echo esc_url( get_template_directory_uri() . '/images/competences/javascript-1.svg' ); ?>" alt="Javascript" />
                     </div>
-                    <!-- Ajoutez d'autres icônes ici 
+                     Ajoutez d'autres icônes ici 
                 </div>
             </div>
         </div>

@@ -645,3 +645,48 @@ footer {
     font-family: Paragraphe;
     color: gray;
 }
+
+.contact-section {
+    margin: 0 auto;
+    text-align: center;
+    color: $theme-color-4;
+    font-family: Paragraphe;
+    font-size: 1.8rem;
+    //background-color: $theme-color-1;
+    @include respond_to_mobile {
+        font-size: 1rem;
+    }
+    &__form {
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    &__info {
+        p {
+            font-size: 1.1em;
+            margin: 10px 0;
+            color: $theme-color-3;
+            font-family: Paragraphe;
+            @include respond_to_mobile {
+                font-size: 1rem;
+            }
+        }
+        iframe {
+            border-radius: 15%;
+            border-top: 5px solid $theme-color-1;
+            margin-top: 5vh;
+        }
+    } 
+}
+
+.btn-submit {
+    @include cta-button();
+    margin-left: 5vw;
+    @include respond_to_mobile {
+        margin-left: 15vw;
+    }
+}
+    

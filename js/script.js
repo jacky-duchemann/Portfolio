@@ -12,4 +12,21 @@ window.addEventListener('scroll', function() {
 });
 
 
+// Affichage de la modale au clic sur l'item "contact" dans le menu
+document.addEventListener("DOMContentLoaded", function() {
+  const contactMenu = document.getElementById('menu-item-18');
+  const modal = document.querySelector('.contact-modal');
 
+  contactMenu.addEventListener('click', function(event) {
+      event.preventDefault(); // empêche le comportement par defaut du lien
+      console.log("Bien cliquer Jacky le beau gosse !");
+      modal.style.display = "block";
+  })
+
+  window.onclick = function(event) {
+      if (event.target === modal) {
+          modal.style.display = "none";
+      }
+  }
+
+});
