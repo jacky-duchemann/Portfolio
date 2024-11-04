@@ -76,9 +76,44 @@
         </article>
     <?php endwhile; endif; ?>
 
-    <div class="call-to-action">
-            
+    <div class="other-project">
+    <h2>A voir aussi</h2>
+    <div class="other-project__grid">
+        <?php
+        // Requête pour récupérer deux projets autres que le projet actuel
+        $related_args = array(
+            'post_type'      => 'projet',
+            'posts_per_page' => 2,
+            'post__not_in'   => array(get_the_ID()), // Exclure le projet actuel
+            'orderby'        => 'rand' // Pour sélectionner aléatoirement d'autres projets
+        );
+
+        $related_query = new WP_Query($related_args);
+
+        if ($related_query->have_posts()) :
+            while ($related_query->have_posts()) : $related_query->the_post();
+                $image = get_the_post_thumbnail_url(); // Récupérer l'image de couverture
+                $title = get_the_title(); // Récupérer le titre du projet
+                ?>
+                
+                <div class="other-project__item">
+                    <a href="<?php the_permalink(); ?>">
+                        <?php if ($image): ?>
+                            <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($title); ?>">
+                        <?php endif; ?>
+                        <h3><?php echo esc_html($title); ?></h3>
+                    </a>
+                </div>
+
+            <?php endwhile;
+        else : ?>
+            <p>Aucun autre projet trouvé.</p>
+        <?php endif;
+        
+        wp_reset_postdata();
+        ?>
     </div>
+</div>
 </main>
 
 <?php get_footer(); ?>

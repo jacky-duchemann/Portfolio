@@ -25,6 +25,7 @@ Mixins pour le responsive du site https://openclassrooms.com/fr/
     text-transform: uppercase;
     text-decoration: none;
     border-radius: 5px; 
+    border: 3px outset $theme-color-1;
     transform: translateY(40px);
     animation: fadeInTitle 3s ease forwards;
     transition: background-color 1.2s ease, transform 0.8s ease-out;
@@ -33,6 +34,7 @@ Mixins pour le responsive du site https://openclassrooms.com/fr/
             color: $theme-color-3;
             transform: scale(1.50);
             box-shadow: 3px 5px 10px $theme-color-1;
+            border: 3px inset $theme-color-2;
         }
 }
 /****************/
@@ -54,26 +56,14 @@ Mixins pour le responsive du site https://openclassrooms.com/fr/
 }
 
 /* Police d'écritures du site */
-@font-face {
-    font-family: 'Comication';
-    src: url('../fonts/Comication.woff') format('woff'),
-}
-@font-face {
-    font-family: 'Gotham';
-    src: url('../fonts/Gotham.woff') format('woff'),
-}
-@font-face {
-    font-family: 'Teacher';
-    src: url('../fonts/Teacher.woff') format('woff'),
-}
-@font-face {
-    font-family: 'Dschool';
-    src: url('../fonts/Cafe24Decoschool.woff') format('woff'),
-}
 
 @font-face {
     font-family: 'Paragraphe';
     src: url('../fonts/CaviarDreams.woff') format('woff'),
+}
+@font-face {
+    font-family: 'Ship';
+    src: url('../fonts/spaceship.woff') format('woff'),
 }
 
 /* Variables couleurs du site */
@@ -154,7 +144,7 @@ hr {
             
         }
         &__menu {
-            font-family: Paragraphe;
+            font-family: Ship;
             font-size: 30px;
             opacity: 0;
             transform: translateY(30px);
@@ -162,7 +152,7 @@ hr {
             margin-right: 5vw;
             @include respond_to_mobile {
                 margin-right: 0;
-                font-size: 20px;
+                font-size: 25px;
             }
             ul {
                 list-style: none; 
@@ -188,84 +178,6 @@ hr {
         }
   }
 
-/*.site-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: auto;
-    //margin-top: 5vh;
-    align-items: center;
-    //margin-top: 5vh;
-    //border-radius: 15%;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-    //border-top: 10px solid $theme-color-1;
-    border-bottom: 5px double $theme-color-1;
-    padding-top: 2vh;
-    //padding-bottom: 3vh;
-    background-color: $theme-color-3;
-    @include respond_to_mobile {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-        &__logo {
-            opacity: 0;
-            transform: translateY(20px);
-            width: 100px;
-            height: 70px;
-            align-items: center;
-            animation: fadeInTitle 1s ease-in-out forwards;
-            margin-left: 5vw;
-            padding: 1%;
-            border-radius: 50%;
-            @include respond_to_mobile {
-                margin-left: 0;
-                padding: none;
-            }
-            a {
-                img {
-                    width: 100%;
-                    border-radius: 50%;
-                    &:hover {
-                        transform: scale(1.10);
-                    }
-                }
-            }
-            
-        }
-        &__menu {
-            font-family: Teacher;
-            font-size: 30px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInTitle 2s ease-in-out forwards;
-            margin-right: 5vw;
-            @include respond_to_mobile {
-                margin-right: 0;
-            }
-            ul {
-                list-style: none; 
-                padding: 0; 
-                margin: 0; 
-                display: flex; 
-            }
-            li {
-                margin-left: 20px;
-                padding: 4px;
-            }
-        a {
-            text-decoration: none; 
-            color: $theme-color-2; 
-            font-weight: bold; 
-            transition: color 1s ease-in-out;
-            &:hover {
-                color: $theme-color-1;
-                text-shadow: 0px 3px 3px $theme-color-2;
-                text-decoration: underline;
-            }
-        }  
-        }
-  }*/
 .hero-header {
     height: 70vh;
     margin: auto;
@@ -305,6 +217,7 @@ hr {
             display: flex;
             justify-content: flex-start;
             color: $theme-color-1;
+            //text-transform: uppercase;
             //text-shadow: 2px 2px 15px $theme-color-1;
             @include respond_to_mobile {
                 width: 50%;
@@ -334,6 +247,9 @@ hr {
         }
         .cta-button {
             @include cta-button;
+            @include respond_to_mobile {
+                font-size: 1.4rem;
+            }
         }
     }
 }
@@ -366,13 +282,13 @@ hr {
                 width: 100%;
             }
             h2 {
-                font-family: Paragraphe;
+                font-family: Ship;
                 font-size: 2.5rem;
                 color: $theme-color-1;
             }
             p {
                 font-family: Paragraphe;
-                font-size: 15px;
+                font-size: 1.2rem;
                 color: grey;
             }
             .cta-button2 {
@@ -385,7 +301,7 @@ hr {
             margin-bottom: 0;
             border-radius: 50%;
             border-left: 5px solid $theme-color-3;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 5px 5px 15px $theme-color-3;
             transition: transform 0.3s ease-in-out, box-shadow 0.4s ease-in;
             &:hover {
                 transform: translateY(-10px);
@@ -442,12 +358,13 @@ hr {
         }
     }
 }
+
 .liste-projet {
     padding: 50px 0;
         &__h2 {
             text-align: center;
             font-size: 2.5rem;
-            font-family: Paragraphe;
+            font-family: Ship;
             color: $theme-color-1;
             //margin-bottom: 20px;
         }
@@ -471,9 +388,13 @@ hr {
                         transform: scale(1.05);
                     }
                     img {
-                        max-width: 100%;
+                        max-width: 85%;
                         height: 50%;
                         border-radius: 50%;
+                        //border-radius: 25%;
+                        border-top: 2px inset $theme-color-2;
+                        border-bottom: 2px inset $theme-color-3;
+                        object-fit: cover;
                     }
                     h3 {
                         font-size: 1.5rem;
@@ -484,7 +405,7 @@ hr {
                         font-size: 1rem;
                         color: $theme-color-2;
                         font-family: Paragraphe;
-                        margin-bottom: 10vh;
+                        margin-bottom: 20vh;
                     }
                     .project-link {
                         display: inline-block;
@@ -510,7 +431,7 @@ hr {
     justify-content: center;
     //box-shadow: 0px 5px 8px $theme-color-1;
     text-align: center;
-    font-family: Paragraphe;
+    font-family: Ship;
     font-size: 40px;
     color: $theme-color-1;
     border-bottom: 2px solid $theme-color-1;
@@ -521,8 +442,6 @@ hr {
         text-align: center;
     }
 }
-
-
 
 .projet-detail {
     display: flex;
@@ -538,7 +457,7 @@ hr {
         font-size: 15px;
     }
     &__thumbnail {
-        width: 50%;
+        width: 65%;
         height: 50%;
         @include respond_to_mobile {
             width: 100%;
@@ -546,8 +465,14 @@ hr {
         img {
             width: 100%;
             height: 100%;
-            border-radius: 50%;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 15%;
+            box-shadow: 5px 5px 15px $theme-color-3;
+            transition: transform 0.3s ease-in-out, box-shadow 0.4s ease-in;
+            &:hover {
+                transform: translateY(-10px);
+                box-shadow: 5px 5px 15px $theme-color-1;
+                transform: scale(1.05);
+            }
             @include respond_to_mobile {
                 width: 80%;
                 height: 100%;
@@ -555,9 +480,9 @@ hr {
         }
     }
     &__info {
-        width: 100%;
+        //width: 100%;
         margin-bottom: 0;
-        width: 50%;
+        width: 65%;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -566,19 +491,19 @@ hr {
             width: 100%;
         }
         h2 {
-            font-size: 50px;
+            font-size: 3rem;
             color: $theme-color-1;
-            font-family: Teacher;
+            font-family: Ship;
             @include respond_to_mobile {
                 font-size: 35px;
             }
         } 
         p {
             font-family: Paragraphe;
-            font-size: 15px;
+            font-size: 1.5rem;
             color: grey;
             @include respond_to_mobile {
-                font-size: 20px;
+                font-size: 1rem;
             }
         }
         &__context {
@@ -635,6 +560,48 @@ hr {
     }
 }
 
+.other-project {
+    margin-top: 50px;
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: $theme-color-1;
+        font-family: Ship;
+    }
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 90vw;
+        margin: 0 auto;
+    }
+    &__item {
+        text-align: center;
+        transition: transform 0.3s;
+        padding: 15px;
+        border-radius: 15%;
+        transition: transform 0.3s ease-in-out, box-shadow 0.4s ease-in;
+        img {
+            width: 80%;
+            height: 80%;
+            border-radius: 15%;
+            margin-bottom: 10px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            color: $theme-color-3;
+        }
+        a {
+            text-decoration: none;
+        }
+        &:hover {
+            transform: translateY(-5px);
+            transform: scale(1.05);
+            box-shadow: 0px 6px 10px $theme-color-1;
+        }
+    }
+}
 footer {
     margin: auto;
     display: flex;
@@ -689,4 +656,39 @@ footer {
         margin-left: 15vw;
     }
 }
-    
+
+/* Animation de clignotement */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black; // Couleur de fond du loader
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0; // Initialement invisible
+    pointer-events: none; // Empêche l'interaction pendant la transition
+    transition: opacity 0.4s ease; // Transition d'apparition du loader
+    &__content {
+        color: $theme-color-1;
+        font-size: 2rem;
+        font-family: Paragraphe;
+        animation: blink 1.5s infinite; // Animation de clignotement
+    }
+}
+
+.loader.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Modal de contact */
+

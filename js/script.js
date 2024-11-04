@@ -1,4 +1,4 @@
-// Script pour le parallax entre le titre et la vidéo //
+// Script pour l'effet de  parallax //
 window.addEventListener('scroll', function() {
     //selectionne l'element avec la classe 'banner__video'
   const parallax = document.querySelector('.typewriter-container__title');
@@ -12,21 +12,45 @@ window.addEventListener('scroll', function() {
 });
 
 
-// Affichage de la modale au clic sur l'item "contact" dans le menu
-document.addEventListener("DOMContentLoaded", function() {
-  const contactMenu = document.getElementById('menu-item-18');
-  const modal = document.querySelector('.contact-modal');
+/* effet de transition loader */
+document.addEventListener("DOMContentLoaded", function () {
+  const loader = document.querySelector("loader");
+  const internalLinks = document.querySelectorAll("a[href^='/'], a[href^='#']");
+  console.log(loader);
+  internalLinks.forEach(link => {
+      link.addEventListener("click", function (event) {
+          // Empêche la navigation automatique
+          event.preventDefault();
+          
+          // Affiche le loader
+          loader.classList.add("visible");
 
-  contactMenu.addEventListener('click', function(event) {
-      event.preventDefault(); // empêche le comportement par defaut du lien
-      console.log("Bien cliquer Jacky le beau gosse !");
-      modal.style.display = "block";
-  })
+          // Attend un instant puis charge la nouvelle page
+          setTimeout(() => {
+              window.location.href = this.href;
+          }, 1500); // Délai de 500ms pour voir l'effet de chargement
+      });
+  });
+});
 
-  window.onclick = function(event) {
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('contact-modal');
+  const closeModal = document.getElementById('close-modal');
+  const contactLink = document.querySelector('.contact-link');
+  
+  contactLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      modal.style.display = 'flex';
+      console.log("Clique effectué");
+  });
+  
+  closeModal.addEventListener('click', function() {
+      modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', function(event) {
       if (event.target === modal) {
-          modal.style.display = "none";
+          modal.style.display = 'none';
       }
-  }
-
+  });
 });

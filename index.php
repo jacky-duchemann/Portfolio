@@ -10,6 +10,13 @@
     <?php
         get_header(); // Inclut l'en-tête du site
     ?>
+<body>
+    <!-- Effet de transition -->
+    <div id="loader" class="loader">
+        <div class="loader__content">
+            <span class="loader-text">Chargement...</span>
+        </div>
+    </div>
 
     <section class="hero-header fade-in" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . "/images/moon5.jpg" ); ?>');">
         <div class="hero-header__content">
@@ -26,11 +33,10 @@
 
     <hr></hr>
 
-    <section class="about-me">
+    <section class="about-me" >
         <!-- Texte introductif a propos de moi -->
-        <!-- Bouton pour accéder la page CV -->
         
-            <div class="about-me__text">
+            <div class="about-me__text" >
                 <h2>À propos de moi</h2>
                 <p>Je m'appelle Jacky Duchemann et je suis développeur web spécialisé dans la création de sites WordPress. Passionné par le code depuis plusieurs années, j'aime transformer des idées en sites fonctionnels et intuitifs.</p>
                 <p>Avec plusieurs projets réalisés en PHP, JavaScript et WordPress, je maîtrise les outils modernes du développement web.</p>
@@ -44,35 +50,6 @@
             </div>
         
     </section>
-    <!--<h2 class="title-tech">Technologies Utilisées</h2>
-    <section class="technologies-carousel" id="technologies">
-        
-        <div class="swipe-container">
-            <div class="swipe">
-                <div class="swipe-wrapper">
-                    <div class="swipe-item">
-                        <img src="<?php echo esc_url( get_template_directory_uri() . '/images/competences/wordpress.png' ); ?>" alt="Wordpress" />
-                    </div>
-                    <div class="swipe-item">
-                        <img src="<?php echo esc_url( get_template_directory_uri() . '/images/competences/css.png' ); ?>" alt="CSS" />
-                    </div>
-                    <div class="swipe-item">
-                        <img src="<?php echo esc_url( get_template_directory_uri() . '/images/competences/node-sass.png' ); ?>" alt="Sass" />
-                    </div>
-                    <div class="swipe-item">
-                        <img src="<?php echo esc_url( get_template_directory_uri() . '/images/competences/elementor.svg' ); ?>" alt="Elementor" />
-                    </div>
-                    <div class="swipe-item">
-                        <img src="<?php echo esc_url( get_template_directory_uri() . '/images/competences/php.svg' ); ?>" alt="PHP" />
-                    </div>
-                    <div class="swipe-item">
-                        <img src="<?php echo esc_url( get_template_directory_uri() . '/images/competences/javascript-1.svg' ); ?>" alt="Javascript" />
-                    </div>
-                     Ajoutez d'autres icônes ici 
-                </div>
-            </div>
-        </div>
-    </section>-->
     <section class="liste-projet" id="projets">
         <!-- Titre = Mes projets -->
         <!-- Loop des projets -> 2 colonnes -->
@@ -98,17 +75,6 @@
                     <img src="<?php echo esc_url($image);?>" alt="<?php echo esc_attr($titre);?>">
                     <h3><?php echo esc_html($titre);?></h3>
                     <p><?php echo esc_html($contexte) ; ?></p>
-                    <!-- <h4> Langage(s) utilisé(es) </h4> -->
-                    <!--<div class="langage">
-                    <?php 
-                    /*$langages = get_field('langage'); // Récupère les compétences sélectionnées
-                    if ( $langages ) :
-                        foreach ( $langages as $langage) :
-                            echo '<p>' . esc_html( $langage ) . '</p>'; // Affiche chaque compétence
-                        endforeach;
-                    endif;*/
-                    ?> 
-                    </div> -->
                 </a>
                 <?php
             endwhile;
