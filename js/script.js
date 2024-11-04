@@ -13,7 +13,7 @@ window.addEventListener('scroll', function() {
 
 
 /* effet de transition loader */
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
   const loader = document.querySelector("loader");
   const internalLinks = document.querySelectorAll("a[href^='/'], a[href^='#']");
   console.log(loader);
@@ -31,26 +31,48 @@ document.addEventListener("DOMContentLoaded", function () {
           }, 1500); // Délai de 500ms pour voir l'effet de chargement
       });
   });
-});
+});*/
 
-document.addEventListener('DOMContentLoaded', function() {
-  const modal = document.getElementById('contact-modal');
-  const closeModal = document.getElementById('close-modal');
-  const contactLink = document.querySelector('.contact-link');
-  
-  contactLink.addEventListener('click', function(event) {
+// Affichage de la modale au clic sur l'item "contact" dans le menu
+document.addEventListener("DOMContentLoaded", function() {
+  const contactMenu = document.getElementById('menu-item-52');
+  const modal = document.querySelector('.modal');
+  const close = document.getElementById('close-btn');
+  const btnContact = document.querySelectorAll('.btn-contact');
+
+  // ouverture modale au clique sur le menu Contact
+  if (!contactMenu) {
+      console.log("Lien contact introuvable");
+  } else {
+      contactMenu.addEventListener('click', function(event) {
+          event.preventDefault();
+          console.log("Clique sur le lien contact");
+          modal.style.display = "block";
+      });
+  }
+  // ouverture modal au clique sur un CTA 
+  btnContact.forEach(function(button) {
+    button.addEventListener('click', function(event) {
       event.preventDefault();
-      modal.style.display = 'flex';
-      console.log("Clique effectué");
-  });
-  
-  closeModal.addEventListener('click', function() {
-      modal.style.display = 'none';
+      modal.style.display = "block";
+    });
   });
 
-  window.addEventListener('click', function(event) {
+  window.onclick = function(event) {
       if (event.target === modal) {
-          modal.style.display = 'none';
+          console.log("Clique en dehors de la modale");
+          modal.style.display = "none";
       }
-  });
+  }
+
+  close.addEventListener('click', function() {
+    modal.style.display = "none";
+    console.log("La modale se ferme !");
+  })
 });
+
+/* ouverture modale au clic sur les CTA */
+document.addEventListener("DOMContentLoaded", function() {
+  const btnContact = document.querySelectorAll('.btn-contact');
+  
+})

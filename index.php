@@ -27,7 +27,7 @@
             </div>
             <P>Developpeur Wordpress</p>
             <!-- Bouton CTA -->
-            <a href="#contact" class="cta-button fade__in__section">| Contactez-moi |</a>
+            <a href="#contact" class="cta-button btn-contact fade__in__section">| Contactez-moi |</a>
         </div>
     </section>
 
@@ -43,7 +43,7 @@
                 <p>Je suis actuellement à la recherche de nouveaux défis en tant que développeur freelance ou au sein d'une équipe dynamique.</p>
                 <p>Pour me contacter, pour discuter d'un projet ou d'une opportunité.</p>
 
-                <a href="#contact" class="cta-button2 fade__in__section">| Cliquez-ici |</a>
+                <a href="#contact" class="cta-button2 btn-contact fade__in__section">| Cliquez-ici |</a>
             </div>
             <div class="about-me__photo">
                 <img src="<?php echo esc_url( get_template_directory_uri() . '/images/jacky.jpg' ); ?>" alt="Photo de Jacky Duchemann">

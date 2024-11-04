@@ -213,7 +213,7 @@ hr {
   color: #333333;
   font-size: 1.8rem;
   font-weight: bold;
-  text-transform: uppercase;
+  font-family: Paragraphe;
   text-decoration: none;
   border-radius: 5px;
   border: 3px outset #D2B48C;
@@ -284,7 +284,7 @@ hr {
   color: #333333;
   font-size: 1.8rem;
   font-weight: bold;
-  text-transform: uppercase;
+  font-family: Paragraphe;
   text-decoration: none;
   border-radius: 5px;
   border: 3px outset #D2B48C;
@@ -411,7 +411,7 @@ hr {
   font-size: 1rem;
   color: #333333;
   font-family: Paragraphe;
-  margin-bottom: 20vh;
+  margin-bottom: 30vh;
 }
 .liste-projet__grid__project .project-link {
   display: inline-block;
@@ -498,6 +498,7 @@ hr {
 @media (max-width: 760px) {
   .projet-detail__info {
     width: 100%;
+    gap: 1vh;
   }
 }
 .projet-detail__info h2 {
@@ -544,7 +545,7 @@ hr {
   color: #333333;
   font-size: 1.8rem;
   font-weight: bold;
-  text-transform: uppercase;
+  font-family: Paragraphe;
   text-decoration: none;
   border-radius: 5px;
   border: 3px outset #D2B48C;
@@ -587,6 +588,11 @@ hr {
   border-right: 2px solid #E0E0E0;
   box-shadow: 5px 5px 15px #D2B48C;
 }
+@media (max-width: 760px) {
+  .swiper-container .swiper-wrapper .swiper-slide img {
+    height: 50%;
+  }
+}
 
 .other-project {
   margin-top: 50px;
@@ -600,8 +606,8 @@ hr {
 }
 .other-project__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
   max-width: 90vw;
   margin: 0 auto;
 }
@@ -611,6 +617,12 @@ hr {
   padding: 15px;
   border-radius: 15%;
   transition: transform 0.3s ease-in-out, box-shadow 0.4s ease-in;
+}
+@media (max-width: 760px) {
+  .other-project__item {
+    margin-bottom: 5vh;
+    border-top: 2px solid #D2B48C;
+  }
 }
 .other-project__item img {
   width: 80%;
@@ -679,35 +691,13 @@ footer {
   margin-top: 5vh;
 }
 
-.btn-submit {
-  display: inline-block;
-  padding: 20px 35px;
-  background-color: #F5F5F5;
-  color: #333333;
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 5px;
-  border: 3px outset #D2B48C;
-  transform: translateY(40px);
-  animation: fadeInTitle 3s ease forwards;
-  transition: background-color 1.2s ease, transform 0.8s ease-out;
-  margin-left: 5vw;
-}
-.btn-submit:hover {
-  background-color: #D2B48C;
-  color: #E0E0E0;
-  transform: scale(1.5);
-  box-shadow: 3px 5px 10px #D2B48C;
-  border: 3px inset #333333;
-}
-@media (max-width: 760px) {
-  .btn-submit {
-    margin-left: 15vw;
-  }
-}
-
+/*.btn-submit {
+    @include cta-button();
+    margin-left: 5vw;
+    @include respond_to_mobile {
+        margin-left: 15vw;
+    }
+}*/
 /* Animation de clignotement */
 @keyframes blink {
   0%, 100% {
@@ -744,4 +734,151 @@ footer {
   pointer-events: auto;
 }
 
-/* Modal de contact *//*# sourceMappingURL=style.css.map */
+/* Modal de contact */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Assure que la modale est au-dessus des autres éléments */
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Ship;
+  margin: 0 auto;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 760px) {
+  .modal {
+    top: 0;
+  }
+}
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  background-image: url("../images/moon.jpg");
+  background-position: bottom center;
+  background-size: 110%;
+  background-repeat: no-repeat;
+  border: 5px solid #D2B48C;
+  font-size: 1rem;
+  color: #E0E0E0;
+  max-width: 50vw;
+  box-sizing: border-box;
+  margin: auto;
+  border-radius: 15%;
+}
+@media (max-width: 760px) {
+  .modal__content {
+    max-width: 90vw;
+    max-height: 80vh;
+  }
+}
+@media (min-width: 768px) and (max-width: 1250px) {
+  .modal__content {
+    max-width: 90vw;
+  }
+}
+.modal__content .close {
+  color: #D2B48C;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.modal__content .close:hover {
+  color: #333333;
+  text-decoration: none;
+  cursor: pointer;
+  transform: scale(2);
+}
+.modal__content .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal__content .wpcf7 {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.modal__content .wpcf7 form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.modal__content .wpcf7 span input {
+  width: 100%;
+  height: 3vh;
+  border: 1px solid #D2B48C;
+  border-radius: 15%;
+  font-family: Paragraphe;
+  color: black;
+}
+@media (max-width: 760px) {
+  .modal__content .wpcf7 span input {
+    width: 80%;
+  }
+}
+.modal__content .wpcf7 span textarea {
+  width: 100%;
+  border: 1px solid #D2B48C;
+  border-radius: 8px;
+}
+@media (max-width: 760px) {
+  .modal__content .wpcf7 span textarea {
+    height: 15vh;
+  }
+}
+.modal__content .wpcf7 .wpcf7-submit {
+  display: inline-block;
+  padding: 20px 35px;
+  background-color: #F5F5F5;
+  color: #333333;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: Paragraphe;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 3px outset #D2B48C;
+  transform: translateY(40px);
+  animation: fadeInTitle 3s ease forwards;
+  transition: background-color 1.2s ease, transform 0.8s ease-out;
+  margin-left: 5vw;
+  padding: 5px 5px;
+  font-size: 1rem;
+}
+.modal__content .wpcf7 .wpcf7-submit:hover {
+  background-color: #D2B48C;
+  color: #E0E0E0;
+  transform: scale(1.5);
+  box-shadow: 3px 5px 10px #D2B48C;
+  border: 3px inset #333333;
+}
+@media (max-width: 760px) {
+  .modal__content .wpcf7 .wpcf7-submit {
+    margin-left: 15vw;
+  }
+}
+.modal__content .wpcf7 .wpcf7-submit:active {
+  transform: scale(0.9); /* Réduit légèrement la taille du bouton lorsqu'il est pressé */
+}
+
+.wpcf7 form .wpcf7-response-output {
+  max-width: 50vh;
+  font-size: 1rem;
+  margin-top: 1vh;
+}/*# sourceMappingURL=style.css.map */
