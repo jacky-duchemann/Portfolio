@@ -18,7 +18,7 @@ Mixins pour le responsive du site https://openclassrooms.com/fr/
 @mixin cta-button {
     display: inline-block;
     padding: 20px 35px;
-    background-color: $theme-color-4; 
+    background-color: $theme-color-3; 
     color: $theme-color-2;
     font-size: 1.8rem;
     font-weight: bold;
@@ -79,7 +79,6 @@ html {
 }
 
 body {
-    //background: $theme-color-2;
     background: black;
 }
 hr {
@@ -105,10 +104,8 @@ hr {
     margin-top: 5vh;
     align-items: center;
     border-radius: 25% 25% 0% 0%;
-    //box-shadow: 65px 65px 65px 65px rgba(0, 0, 0, 0.3);
     box-shadow: 0 -4px 6px -2px $theme-color-1;
     border-top: 10px solid black;
-    //border-bottom: 5px solid $theme-color-1;
     padding-top: 2vh;
     padding-bottom: 3vh;
     background-color: $theme-color-1;
@@ -172,7 +169,6 @@ hr {
             &:hover {
                 color: $theme-color-3;
                 text-shadow: 0px 3px 3px $theme-color-2;
-                //text-decoration: underline;
             }
         }  
         }
@@ -268,6 +264,7 @@ hr {
     padding-left: 1vw;
     padding-right: 1vw;
     margin-top: 5vh;
+    margin-bottom: 15vh;
     border-radius: 15px;
     transition: transform 0.3s;
     @include respond_to_mobile {
@@ -289,7 +286,7 @@ hr {
             p {
                 font-family: Paragraphe;
                 font-size: 1.2rem;
-                color: grey;
+                color: darkgray;
             }
             .cta-button2 {
                 @include cta-button;
@@ -320,44 +317,189 @@ hr {
         }
 }
 
-.title-tech {
-    margin-top: 12vh;
-    max-width: 80vw;
-    margin-right: auto;
-    margin-left: auto;
+
+.a-propos {
     display: flex;
-    text-align: center;
-    justify-content: center;
-    font-family: Paragraphe;
-    font-size: 2.5rem;
-    color: $theme-color-1;
-}
-.technologies-carousel {
-    padding: 40px 20px;
-    background-color: white;
-    margin-top: 5vh;
-    .swipe-container {
-        position: relative;
-        overflow: hidden; /* Cache les éléments hors de la zone visible */
-        .swipe {
-            .swipe-wrapper {
-                display: flex; /* Aligne les éléments horizontalement */
-                flex-direction: row;
-                gap: 15vw;
-                .swipe-item {
-                    flex: 0 0 auto; /* Empêche les éléments de se réduire */
-                    margin-right: 10px; /* Espace entre les éléments */
-                    text-align: center; /* Centrer le contenu */
-                    img {
-                        width: 80px; /* Largeur de l'icône */
-                        height: auto; /* Hauteur automatique pour garder les proportions */
-                        margin: 0 auto; /* Centrer l'image */
+    flex-direction: column;
+    gap: 5vw;
+    max-width: 80%;
+    margin: 0 auto;
+    align-items: center;
+    .competences {
+        padding: 20px;
+        background-color: $theme-color-2;
+        border-radius: 15%;
+        margin-top: 5vh;
+        //margin: 0 auto;
+        width: 100%;
+        box-shadow: 5px 5px 15px $theme-color-3;
+        border-left: 5px solid $theme-color-3;
+        transition: transform 0.3s ease-in-out, box-shadow 0.4s ease-in;
+            &:hover {
+                transform: translateY(-10px);
+                box-shadow: 5px 5px 15px $theme-color-1;
+                transform: scale(1.03);
+            }
+        h2 {
+            font-size: 2.5rem;
+            font-family: Ship;
+            text-align: center;
+            margin-bottom: 5vh;
+            color: $theme-color-1;
+            animation: fadeInTitle 1s ease-in-out forwards;
+        }
+        .competence {
+            display: flex;
+            flex-direction: column;
+            //margin-bottom: 5vh;
+            text-align: center;
+            align-items: center;
+            border-radius: 8px;
+            padding: 2%;
+            p {
+                font-size: 1rem;
+                font-family: Paragraphe;
+                color: $theme-color-3;
+                width: 80%;
+            }
+            .competence-name {
+                font-size: 1rem;
+                color: $theme-color-3;
+                font-family: Paragraphe;
+                font-weight: bolder;
+            }
+            .competence-bar {
+                background-color: $theme-color-3;
+                border-radius: 8px;
+                overflow: hidden;
+                height: 10px;
+                margin-top: 5px;
+                width: 80%;
+                //align-items: center;
+                .competence-level {
+                    background-color: $theme-color-1;
+                    height: 100%;
+                    border-radius: 8px;
+                    transition: width 1.5s ease-in-out;
+                    &:hover {
+                        background-color: darkgray;
+                        transition: background-color 0.2s ease-in-out;
                     }
                 }
             }
         }
     }
+    .cv-sections {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5vh;
+        background-color: $theme-color-2;
+        border-radius: 15%;
+        padding: 20px;
+        box-shadow: 5px 5px 15px $theme-color-3;
+        border-left: 5px solid $theme-color-3;
+        margin-top: 5vh;
+        transition: transform 0.3s ease-in-out, box-shadow 0.4s ease-in;
+            &:hover {
+                transform: translateY(-10px);
+                box-shadow: 5px 5px 15px $theme-color-1;
+                transform: scale(1.03);
+            }
+        h2 {
+            font-size: 2.5rem;
+            font-family: Ship;
+            text-align: center;
+            margin-bottom: 0;
+            margin-top: 0;
+            color: $theme-color-1;
+
+        }
+        .cv-section {
+            display: flex;
+            flex-direction: column;
+            gap: 5vh;
+            .cv-title {
+                cursor: pointer;
+                background-color: $theme-color-1;
+                padding: 10px;
+                border: 2px solid $theme-color-4;
+                border-radius: 8px;
+                box-shadow: 5px 5px 5px $theme-color-3;
+                transition: background-color 0.3s;
+                color: $theme-color-2;
+                font-family: Paragraphe;
+                width: 80%;
+                margin: 0 auto;
+                text-align: center;
+                .icone-toggle {
+                    //margin-left: 15vw;
+                }
+                &:hover {
+                    background-color: $theme-color-3;
+                }
+            }
+            .cv-content {
+                display: none;
+                padding: 10px;
+                border-left: 3px solid $theme-color-1;
+                margin: 5px 0 15px;
+                width: 80%;
+                margin: 0 auto;
+                color: $theme-color-3;
+                font-family: Paragraphe;
+            }
+        }
+    }
 }
+/*.competences {
+    padding: 20px;
+    background-color: $theme-color-2;
+    border-radius: 15%;
+    margin-top: 15vh;
+    //margin: 0 auto;
+    width: 50%;
+    box-shadow: 5px 5px 15px $theme-color-3;
+    border-left: 5px solid $theme-color-3;
+    h2 {
+        font-size: 2.5rem;
+        font-family: Ship;
+        text-align: center;
+        margin-bottom: 5vh;
+        color: $theme-color-1;
+        animation: fadeInTitle 1s ease-in-out forwards;
+    }
+    .competence {
+        margin-bottom: 5vh;
+        text-align: center;
+        p {
+            font-size: 1rem;
+            font-family: Paragraphe;
+            color: $theme-color-3;
+        }
+        .competence-name {
+            font-size: 1rem;
+            color: $theme-color-3;
+        }
+        .competence-bar {
+            background-color: $theme-color-3;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 10px;
+            margin-top: 5px;
+            .competence-level {
+                background-color: $theme-color-1;
+                height: 100%;
+                border-radius: 8px;
+                transition: width 1.5s ease-in-out;
+                &:hover {
+                    background-color: darkgray;
+                    transition: background-color 0.2s ease-in-out;
+                }
+            }
+        }
+    }
+}*/
 
 .liste-projet {
     padding: 50px 0;
@@ -376,15 +518,16 @@ hr {
             margin: 0 auto;
                 &__project {
                     padding: 20px;
-                    border-radius: 10px;
+                    border-left: 5px solid $theme-color-3;
+                    border-radius: 15%;
                     box-shadow: 5px 5px 15px rgba(90, 86, 86, 0.3);
-                    background-color: $theme-color-1;
+                    background-color: $theme-color-2;
                     text-align: center;
                     transition: transform 0.3s ease-in-out, box-shadow 0.4s ease-in;
                     text-decoration: none;
                     &:hover {
                         transform: translateY(-10px);
-                        box-shadow: 5px 5px 5px $theme-color-3;
+                        box-shadow: 5px 5px 5px $theme-color-1;
                         transform: scale(1.05);
                     }
                     img {
@@ -392,18 +535,18 @@ hr {
                         height: 50%;
                         border-radius: 50%;
                         //border-radius: 25%;
-                        border-top: 2px inset $theme-color-2;
-                        border-bottom: 2px inset $theme-color-3;
+                        border: 5px inset $theme-color-1;
+                        //border-bottom: 5px inset $theme-color-3;
                         object-fit: cover;
                     }
                     h3 {
                         font-size: 1.5rem;
                         font-family: Paragraphe; 
-                        color: $theme-color-3; 
+                        color: $theme-color-1; 
                     }
                     p {
                         font-size: 1rem;
-                        color: $theme-color-2;
+                        color: darkgray;
                         font-family: Paragraphe;
                         margin-bottom: 30vh;
                     }
@@ -480,7 +623,6 @@ hr {
         }
     }
     &__info {
-        //width: 100%;
         margin-bottom: 0;
         width: 65%;
         height: 100%;
@@ -502,7 +644,7 @@ hr {
         p {
             font-family: Paragraphe;
             font-size: 1.5rem;
-            color: grey;
+            color: darkgray;
             @include respond_to_mobile {
                 font-size: 1rem;
             }
@@ -586,6 +728,7 @@ hr {
         padding: 15px;
         border-radius: 15%;
         transition: transform 0.3s ease-in-out, box-shadow 0.4s ease-in;
+        padding-bottom: 10%;
         @include respond_to_mobile {
             margin-bottom: 5vh;
             border-top: 2px solid $theme-color-1;
@@ -598,7 +741,7 @@ hr {
         }
         h3 {
             font-size: 1.2rem;
-            color: $theme-color-3;
+            color: $theme-color-1;
         }
         a {
             text-decoration: none;
@@ -621,49 +764,6 @@ footer {
     color: gray;
 }
 
-.contact-section {
-    margin: 0 auto;
-    text-align: center;
-    color: $theme-color-4;
-    font-family: Paragraphe;
-    font-size: 1.8rem;
-    //background-color: $theme-color-1;
-    @include respond_to_mobile {
-        font-size: 1rem;
-    }
-    &__form {
-        margin: 20px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-    }
-    &__info {
-        p {
-            font-size: 1.1em;
-            margin: 10px 0;
-            color: $theme-color-3;
-            font-family: Paragraphe;
-            @include respond_to_mobile {
-                font-size: 1rem;
-            }
-        }
-        iframe {
-            border-radius: 15%;
-            border-top: 5px solid $theme-color-1;
-            margin-top: 5vh;
-        }
-    } 
-}
-
-/*.btn-submit {
-    @include cta-button();
-    margin-left: 5vw;
-    @include respond_to_mobile {
-        margin-left: 15vw;
-    }
-}*/
 
 /* Animation de clignotement */
 @keyframes blink {
@@ -801,6 +901,7 @@ footer {
                             margin-left: 5vw;
                             padding: 5px 5px;
                             font-size: 1rem;
+                            cursor: pointer;
                             @include respond_to_mobile {
                                 margin-left: 15vw;
                             }
