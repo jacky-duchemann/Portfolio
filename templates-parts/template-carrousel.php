@@ -1,5 +1,5 @@
 <?php
-// Récupération des images ACF
+// Récupération des images 
 $image_1 = get_field('image-illustration-1');
 $image_2 = get_field('image-illustration-2');
 $image_3 = get_field('image-illustration-3');
@@ -29,13 +29,13 @@ if ($image_1 || $image_2 || $image_3) : // Vérifier si au moins une image est p
             <?php endif; ?>
         </div>
 
-        <!-- Boutons de navigation -->
+        <!-- Boutons de navigation (peut être rajouter si besoin)-->
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
 
-        <!-- Pagination (facultatif) -->
+        <!-- Pagination ((peut être rajouter si besoin)) -->
         <div class="swiper-pagination"></div>
     </div>
 <?php
-endif; // Fin de la vérification des images
+endif; 
 ?>

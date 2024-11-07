@@ -51,6 +51,10 @@
                             <img src="<?php echo esc_url($image_3['url']); ?>" alt="<?php echo esc_attr($image_3['alt']); ?>" />
                         </div>
                     <?php endif; ?>
+                        <div class="swiper-slide">
+                            <p> Prêt à discuter de votre projet ? Je suis à votre écoute !"</p>
+                            <a href="#contact" class="cta-button2 btn-contact fade__in__section">| Contactez-moi |</a>
+                        </div>
                     </div>
             </div>
                 <?php endif; ?>

@@ -1,6 +1,6 @@
 
 /**
-Mixins pour le responsive du site https://openclassrooms.com/fr/
+Mixins pour le responsive du site 
 */
 @mixin respond_to_mobile {
     @media (max-width: 760px) {
@@ -77,25 +77,9 @@ html {
     padding: 0;
     margin: 0;
 }
-
 body {
     background: black;
 }
-hr {
-    display: none;
-    max-width: 90vw;
-    background-color: $theme-color-2;
-    color: $theme-color-3;
-    height: 10px;
-    border-bottom: 3px solid black;
-    border-top: 1px solid white;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    border-radius: 5px;
-    //box-shadow: 1px 2px 2px white;
-    margin-top: 10vh;
-}
-
 .site-header {
     display: flex;
     flex-direction: row;
@@ -173,7 +157,6 @@ hr {
         }  
         }
   }
-
 .hero-header {
     height: 70vh;
     margin: auto;
@@ -249,7 +232,6 @@ hr {
         }
     }
 }
-
 .about-me {
     display: flex;
     flex-direction: row;
@@ -316,8 +298,6 @@ hr {
             }
         }
 }
-
-
 .a-propos {
     display: flex;
     flex-direction: column;
@@ -381,7 +361,6 @@ hr {
                 height: 10px;
                 margin-top: 5px;
                 width: 80%;
-                //align-items: center;
                 .competence-level {
                     background-color: $theme-color-1;
                     height: 100%;
@@ -458,55 +437,6 @@ hr {
         }
     }
 }
-/*.competences {
-    padding: 20px;
-    background-color: $theme-color-2;
-    border-radius: 15%;
-    margin-top: 15vh;
-    //margin: 0 auto;
-    width: 50%;
-    box-shadow: 5px 5px 15px $theme-color-3;
-    border-left: 5px solid $theme-color-3;
-    h2 {
-        font-size: 2.5rem;
-        font-family: Ship;
-        text-align: center;
-        margin-bottom: 5vh;
-        color: $theme-color-1;
-        animation: fadeInTitle 1s ease-in-out forwards;
-    }
-    .competence {
-        margin-bottom: 5vh;
-        text-align: center;
-        p {
-            font-size: 1rem;
-            font-family: Paragraphe;
-            color: $theme-color-3;
-        }
-        .competence-name {
-            font-size: 1rem;
-            color: $theme-color-3;
-        }
-        .competence-bar {
-            background-color: $theme-color-3;
-            border-radius: 8px;
-            overflow: hidden;
-            height: 10px;
-            margin-top: 5px;
-            .competence-level {
-                background-color: $theme-color-1;
-                height: 100%;
-                border-radius: 8px;
-                transition: width 1.5s ease-in-out;
-                &:hover {
-                    background-color: darkgray;
-                    transition: background-color 0.2s ease-in-out;
-                }
-            }
-        }
-    }
-}*/
-
 .liste-projet {
     padding: 50px 0;
         &__h2 {
@@ -529,11 +459,12 @@ hr {
                     box-shadow: 5px 5px 15px rgba(90, 86, 86, 0.3);
                     background-color: $theme-color-2;
                     text-align: center;
-                    transition: transform 0.3s ease-in-out, box-shadow 0.4s ease-in;
+                    transition: transform 0.3s ease-in-out, box-shadow 0.4s ease-in, border-left 0.4s ease-in;
                     text-decoration: none;
                     &:hover {
                         transform: translateY(-10px);
                         box-shadow: 5px 5px 5px $theme-color-1;
+                        border-left: 5px solid $theme-color-2;
                         transform: scale(1.05);
                     }
                     img {
@@ -572,18 +503,18 @@ hr {
 
 .main-title {
     margin: auto;
-    //margin-top: 5vh;
-    margin-bottom: 15vh;
+    margin-bottom: 5vh;
     padding-bottom: 3%;
     padding-top: 3%;
     display: flex;
     justify-content: center;
-    //box-shadow: 0px 5px 8px $theme-color-1;
+    box-shadow: 0px 5px 8px $theme-color-1;
     text-align: center;
     font-family: Ship;
     font-size: 40px;
     color: $theme-color-1;
     border-bottom: 2px solid $theme-color-1;
+    border-radius: 15%;
     //background-color: $theme-color-3;
     @include respond_to_mobile {
         font-size: 25px;
@@ -591,7 +522,6 @@ hr {
         text-align: center;
     }
 }
-
 .projet-detail {
     display: flex;
     flex-direction: column;
@@ -681,7 +611,6 @@ hr {
         }
     }
 }
-
 .swiper-container {
     width: 100%;
     height: 400px;
@@ -691,10 +620,24 @@ hr {
         gap: 2vw;
         .swiper-slide {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            .cta-button2 {
+                @include cta-button();
+                font-family: Ship;
+                @include respond_to_mobile {
+                    padding: 6px;
+                }
+            }
+            p {
+                font-size: 2rem;
+                font-family: Ship;
+                @include respond_to_mobile {
+                    font-size: 0.8rem;
+                }
+            }
             img {
                 width: 100%;
                 height: auto;
@@ -711,7 +654,6 @@ hr {
         }
     }
 }
-
 .other-project {
     margin-top: 50px;
     h2 {
@@ -769,41 +711,6 @@ footer {
     font-family: Paragraphe;
     color: gray;
 }
-
-
-/* Animation de clignotement */
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-}
-
-.loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: black; // Couleur de fond du loader
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    opacity: 0; // Initialement invisible
-    pointer-events: none; // Empêche l'interaction pendant la transition
-    transition: opacity 0.4s ease; // Transition d'apparition du loader
-    &__content {
-        color: $theme-color-1;
-        font-size: 2rem;
-        font-family: Paragraphe;
-        animation: blink 1.5s infinite; // Animation de clignotement
-    }
-}
-
-.loader.visible {
-    opacity: 1;
-    pointer-events: auto;
-}
-
 /* Modal de contact */
 .modal {
     display: none; 
@@ -829,7 +736,7 @@ footer {
             align-items: center; 
             justify-content: center; 
             background-color: black;
-            background-image: url('../images/moon.jpg');
+            background-image: url('../images/moon.webp');
             background-position: bottom center;
             background-size: 110%;
             background-repeat: no-repeat;
@@ -852,6 +759,7 @@ footer {
                     float: right;
                     font-size: 28px;
                     font-weight: bold;
+                    cursor: pointer;
                         &:hover {
                             color: $theme-color-2;
                             text-decoration: none;
@@ -923,6 +831,10 @@ footer {
     max-width: 50vh;
     font-size: 1rem;
     margin-top: 1vh;
+    @include respond_to_mobile {
+        font-size: 0.8rem;
+        margin-top: 0;
+    }
 }
     
 

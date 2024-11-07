@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /**
-Mixins pour le responsive du site https://openclassrooms.com/fr/
+Mixins pour le responsive du site 
 */
 /* Modèle CTA */
 /****************/
@@ -37,20 +37,6 @@ html {
 
 body {
   background: black;
-}
-
-hr {
-  display: none;
-  max-width: 90vw;
-  background-color: #333333;
-  color: #E0E0E0;
-  height: 10px;
-  border-bottom: 3px solid black;
-  border-top: 1px solid white;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-  border-radius: 5px;
-  margin-top: 10vh;
 }
 
 .site-header {
@@ -481,54 +467,6 @@ hr {
   font-family: Paragraphe;
 }
 
-/*.competences {
-    padding: 20px;
-    background-color: $theme-color-2;
-    border-radius: 15%;
-    margin-top: 15vh;
-    //margin: 0 auto;
-    width: 50%;
-    box-shadow: 5px 5px 15px $theme-color-3;
-    border-left: 5px solid $theme-color-3;
-    h2 {
-        font-size: 2.5rem;
-        font-family: Ship;
-        text-align: center;
-        margin-bottom: 5vh;
-        color: $theme-color-1;
-        animation: fadeInTitle 1s ease-in-out forwards;
-    }
-    .competence {
-        margin-bottom: 5vh;
-        text-align: center;
-        p {
-            font-size: 1rem;
-            font-family: Paragraphe;
-            color: $theme-color-3;
-        }
-        .competence-name {
-            font-size: 1rem;
-            color: $theme-color-3;
-        }
-        .competence-bar {
-            background-color: $theme-color-3;
-            border-radius: 8px;
-            overflow: hidden;
-            height: 10px;
-            margin-top: 5px;
-            .competence-level {
-                background-color: $theme-color-1;
-                height: 100%;
-                border-radius: 8px;
-                transition: width 1.5s ease-in-out;
-                &:hover {
-                    background-color: darkgray;
-                    transition: background-color 0.2s ease-in-out;
-                }
-            }
-        }
-    }
-}*/
 .liste-projet {
   padding: 50px 0;
 }
@@ -552,12 +490,13 @@ hr {
   box-shadow: 5px 5px 15px rgba(90, 86, 86, 0.3);
   background-color: #333333;
   text-align: center;
-  transition: transform 0.3s ease-in-out, box-shadow 0.4s ease-in;
+  transition: transform 0.3s ease-in-out, box-shadow 0.4s ease-in, border-left 0.4s ease-in;
   text-decoration: none;
 }
 .liste-projet__grid__project:hover {
   transform: translateY(-10px);
   box-shadow: 5px 5px 5px #D2B48C;
+  border-left: 5px solid #333333;
   transform: scale(1.05);
 }
 .liste-projet__grid__project img {
@@ -591,16 +530,18 @@ hr {
 /* Single-projet.php*/
 .main-title {
   margin: auto;
-  margin-bottom: 15vh;
+  margin-bottom: 5vh;
   padding-bottom: 3%;
   padding-top: 3%;
   display: flex;
   justify-content: center;
+  box-shadow: 0px 5px 8px #D2B48C;
   text-align: center;
   font-family: Ship;
   font-size: 40px;
   color: #D2B48C;
   border-bottom: 2px solid #D2B48C;
+  border-radius: 15%;
 }
 @media (max-width: 760px) {
   .main-title {
@@ -738,10 +679,47 @@ hr {
 }
 .swiper-container .swiper-wrapper .swiper-slide {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.swiper-container .swiper-wrapper .swiper-slide .cta-button2 {
+  display: inline-block;
+  padding: 20px 35px;
+  background-color: #E0E0E0;
+  color: #333333;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: Paragraphe;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 3px outset #D2B48C;
+  transform: translateY(40px);
+  animation: fadeInTitle 3s ease forwards;
+  transition: background-color 1.2s ease, transform 0.8s ease-out;
+  font-family: Ship;
+}
+.swiper-container .swiper-wrapper .swiper-slide .cta-button2:hover {
+  background-color: #D2B48C;
+  color: #E0E0E0;
+  transform: scale(1.5);
+  box-shadow: 3px 5px 10px #D2B48C;
+  border: 3px inset #333333;
+}
+@media (max-width: 760px) {
+  .swiper-container .swiper-wrapper .swiper-slide .cta-button2 {
+    padding: 6px;
+  }
+}
+.swiper-container .swiper-wrapper .swiper-slide p {
+  font-size: 2rem;
+  font-family: Ship;
+}
+@media (max-width: 760px) {
+  .swiper-container .swiper-wrapper .swiper-slide p {
+    font-size: 0.8rem;
+  }
 }
 .swiper-container .swiper-wrapper .swiper-slide img {
   width: 100%;
@@ -821,42 +799,6 @@ footer {
   color: gray;
 }
 
-/* Animation de clignotement */
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-.loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
-}
-.loader__content {
-  color: #D2B48C;
-  font-size: 2rem;
-  font-family: Paragraphe;
-  animation: blink 1.5s infinite;
-}
-
-.loader.visible {
-  opacity: 1;
-  pointer-events: auto;
-}
-
 /* Modal de contact */
 .modal {
   display: none;
@@ -885,7 +827,7 @@ footer {
   align-items: center;
   justify-content: center;
   background-color: black;
-  background-image: url("../images/moon.jpg");
+  background-image: url("../images/moon.webp");
   background-position: bottom center;
   background-size: 110%;
   background-repeat: no-repeat;
@@ -913,6 +855,7 @@ footer {
   float: right;
   font-size: 28px;
   font-weight: bold;
+  cursor: pointer;
 }
 .modal__content .close:hover {
   color: #333333;
@@ -1005,4 +948,10 @@ footer {
   max-width: 50vh;
   font-size: 1rem;
   margin-top: 1vh;
+}
+@media (max-width: 760px) {
+  .wpcf7 form .wpcf7-response-output {
+    font-size: 0.8rem;
+    margin-top: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
