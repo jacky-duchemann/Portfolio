@@ -25,20 +25,19 @@
         </div>
     </section>
 
-    <hr></hr>
 
     <section class="about-me" >
         <!-- Texte introductif a propos de moi -->
         
             <div class="about-me__text" id="a-propos" >
                 <h2>À propos de moi</h2>
-                <p>Je m'appelle Jacky Duchemann et je suis développeur web spécialisé dans la création de sites WordPress. Passionné par le code depuis plusieurs années, j'aime transformer des idées en sites fonctionnels et intuitifs.</p>
-                <p>Avec plusieurs projets réalisés en PHP, JavaScript et WordPress, je maîtrise les outils modernes du développement web.</p>
-                <p>Je suis actuellement à la recherche de nouveaux défis en tant que développeur freelance ou au sein d'une équipe dynamique.</p>
-                <p>Pour me contacter, pour discuter d'un projet ou d'une opportunité.</p>
+                <p>Je m'appelle Jacky Duchemann et je suis développeur web spécialisé dans la création de sites WordPress. Initialement diplômé en réseaux, j'ai choisi de me tourner vers le développement web, porté par une passion pour le code et le désir de transformer des idées en sites fonctionnels et intuitifs</p>
+                <p>Ma transition vers le développement s’est concrétisée au travers d’une formation complète, au cours de laquelle j’ai réalisé divers projets en PHP, JavaScript et WordPress. Cette expérience m’a permis de maîtriser les bases du développement moderne tout en renforçant ma capacité à apprendre et m’adapter en permanence. Je tire également profit de mon expertise en réseau, qui m’offre une compréhension approfondie de l'architecture et des performances des sites web.</p>
+                <p>Aujourd'hui, je suis à la recherche de nouveaux défis en tant que freelance ou au sein d'une équipe dynamique.</p>
+                <p>Si vous avez un projet ou une opportunité à partager, n'hésitez pas à me contacter.</p>
             </div>
             <div class="about-me__photo">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/images/jacky.webp' ); ?>" alt="Photo de Jacky Duchemann">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/images/about-me.webp' ); ?>" alt="Photo de Jacky Duchemann">
             </div>
         
     </section>
@@ -129,7 +128,7 @@
         <!-- Titre = Mes projets -->
         <!-- Loop des projets -> 2 colonnes -->
         <!-- Envie de réaliser un projet ? -> CTA comme sur le hero-header -->
-        <hr></hr>
+        
         <h2 class="liste-projet__h2"> Mes projets </h2>
         
         <div class="liste-projet__grid">

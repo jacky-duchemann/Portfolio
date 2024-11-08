@@ -113,7 +113,7 @@ body {
   text-decoration: none;
   color: #333333;
   font-weight: bold;
-  transition: color 0.8s ease-in-out;
+  transition: color 0.4s ease-in-out;
 }
 .site-header__menu a:hover {
   color: #E0E0E0;
@@ -291,9 +291,9 @@ body {
   height: 100%;
   margin-bottom: 0;
   border-radius: 50%;
-  border-left: 5px solid #E0E0E0;
-  box-shadow: 5px 5px 15px #E0E0E0;
-  transition: transform 0.3s ease-in-out, box-shadow 0.4s ease-in;
+  box-shadow: 5px 5px 15px #F5F5F5;
+  border-left: 5px solid #F5F5F5;
+  transition: transform 0.3s ease-in-out, box-shadow 0.2s ease-in;
 }
 .about-me__photo:hover {
   transform: translateY(-10px);
@@ -308,7 +308,6 @@ body {
 .about-me__photo img {
   width: 100%;
   height: 100%;
-  border-right: 5px solid #D2B48C;
   border-radius: 50%;
 }
 
@@ -360,6 +359,7 @@ body {
 @media (max-width: 760px) {
   .a-propos .competences .cta-button2 {
     padding: 15px 15px;
+    font-size: 1rem;
   }
 }
 .a-propos .competences h2 {
@@ -762,6 +762,7 @@ body {
   border-radius: 15%;
   transition: transform 0.3s ease-in-out, box-shadow 0.4s ease-in;
   padding-bottom: 10%;
+  border-top: 5px solid #E0E0E0;
 }
 @media (max-width: 760px) {
   .other-project__item {
@@ -786,6 +787,7 @@ body {
   transform: translateY(-5px);
   transform: scale(1.05);
   box-shadow: 0px 6px 10px #D2B48C;
+  border-top: none;
 }
 
 footer {
@@ -941,7 +943,7 @@ footer {
   }
 }
 .modal__content .wpcf7 .wpcf7-submit:active {
-  transform: scale(0.9); /* Réduit légèrement la taille du bouton lorsqu'il est pressé */
+  transform: scale(0.9);
 }
 
 .wpcf7 form .wpcf7-response-output {

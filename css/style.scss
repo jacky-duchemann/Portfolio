@@ -149,7 +149,7 @@ body {
             text-decoration: none; 
             color: $theme-color-2; 
             font-weight: bold; 
-            transition: color 0.8s ease-in-out;
+            transition: color 0.4s ease-in-out;
             &:hover {
                 color: $theme-color-3;
                 text-shadow: 0px 3px 3px $theme-color-2;
@@ -279,9 +279,9 @@ body {
             height: 100%;
             margin-bottom: 0;
             border-radius: 50%;
-            border-left: 5px solid $theme-color-3;
-            box-shadow: 5px 5px 15px $theme-color-3;
-            transition: transform 0.3s ease-in-out, box-shadow 0.4s ease-in;
+            box-shadow: 5px 5px 15px $theme-color-4;
+            border-left: 5px solid $theme-color-4;
+            transition: transform 0.3s ease-in-out, box-shadow 0.2s ease-in;
             &:hover {
                 transform: translateY(-10px);
                 box-shadow: 5px 5px 15px $theme-color-1;
@@ -293,7 +293,6 @@ body {
             img {
                 width: 100%;
                 height: 100%;
-                border-right: 5px solid $theme-color-1;
                 border-radius: 50%;
             }
         }
@@ -310,7 +309,6 @@ body {
         background-color: $theme-color-2;
         border-radius: 15%;
         margin-top: 5vh;
-        //margin: 0 auto;
         width: 100%;
         box-shadow: 5px 5px 15px $theme-color-3;
         border-left: 5px solid $theme-color-3;
@@ -324,6 +322,7 @@ body {
             @include cta-button;
             @include respond_to_mobile {
                 padding: 15px 15px;
+                font-size: 1rem;
             }
         }
         h2 {
@@ -337,7 +336,6 @@ body {
         .competence {
             display: flex;
             flex-direction: column;
-            //margin-bottom: 5vh;
             text-align: center;
             align-items: center;
             border-radius: 8px;
@@ -417,9 +415,6 @@ body {
                 width: 80%;
                 margin: 0 auto;
                 text-align: center;
-                .icone-toggle {
-                    //margin-left: 15vw;
-                }
                 &:hover {
                     background-color: $theme-color-3;
                 }
@@ -444,7 +439,6 @@ body {
             font-size: 2.5rem;
             font-family: Ship;
             color: $theme-color-1;
-            //margin-bottom: 20px;
         }
         &__grid {
             display: grid;
@@ -471,9 +465,7 @@ body {
                         max-width: 85%;
                         height: 50%;
                         border-radius: 50%;
-                        //border-radius: 25%;
                         border: 5px inset $theme-color-1;
-                        //border-bottom: 5px inset $theme-color-3;
                         object-fit: cover;
                     }
                     h3 {
@@ -515,7 +507,6 @@ body {
     color: $theme-color-1;
     border-bottom: 2px solid $theme-color-1;
     border-radius: 15%;
-    //background-color: $theme-color-3;
     @include respond_to_mobile {
         font-size: 25px;
         align-content: center;
@@ -677,6 +668,7 @@ body {
         border-radius: 15%;
         transition: transform 0.3s ease-in-out, box-shadow 0.4s ease-in;
         padding-bottom: 10%;
+        border-top: 5px solid $theme-color-3;
         @include respond_to_mobile {
             margin-bottom: 5vh;
             border-top: 2px solid $theme-color-1;
@@ -698,6 +690,7 @@ body {
             transform: translateY(-5px);
             transform: scale(1.05);
             box-shadow: 0px 6px 10px $theme-color-1;
+            border-top: none;
         }
     }
 }
@@ -820,14 +813,13 @@ footer {
                                 margin-left: 15vw;
                             }
                             &:active {
-                                transform: scale(0.9); /* Réduit légèrement la taille du bouton lorsqu'il est pressé */
+                                transform: scale(0.9); 
                             }
                 }
         }
 }
 }
 .wpcf7 form .wpcf7-response-output {
-    //display: none;
     max-width: 50vh;
     font-size: 1rem;
     margin-top: 1vh;
