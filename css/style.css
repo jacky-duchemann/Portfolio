@@ -640,10 +640,17 @@ body {
   display: inline-block;
   background-color: #D2B48C;
   padding: 5px 10px;
-  margin-right: 10px;
+  margin-right: 5px;
   margin-bottom: 10px;
   border-radius: 4px;
   font-size: 0.9rem;
+  font-family: Paragraphe;
+}
+@media (max-width: 760px) {
+  .projet-detail__info__competences ul li {
+    width: 80%;
+    margin-right: 0;
+  }
 }
 .projet-detail__info__link .cta-link {
   display: inline-block;
@@ -666,6 +673,13 @@ body {
   transform: scale(1.5);
   box-shadow: 3px 5px 10px #D2B48C;
   border: 3px inset #333333;
+}
+@media (max-width: 760px) {
+  .projet-detail__info__link .cta-link {
+    padding: 15px 15px;
+    width: 80%;
+    font-size: 1rem;
+  }
 }
 
 .swiper-container {
@@ -909,6 +923,7 @@ footer {
 @media (max-width: 760px) {
   .modal__content .wpcf7 span textarea {
     height: 15vh;
+    width: 80%;
   }
 }
 .modal__content .wpcf7 .wpcf7-submit {
